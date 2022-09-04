@@ -27,7 +27,7 @@ h1 {
 h2  {
 
     color: white;
-
+    padding-top: 10px;
 }
 
 h3 {
@@ -95,9 +95,4 @@ summary {
     padding-top: 10px;
     padding-left: 10px;
     color: white;
-}
-
-list {
-
-   
 }

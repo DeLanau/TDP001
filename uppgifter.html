@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="sv">
   <head>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -8,7 +8,7 @@
   </head>
   <body>
     <header>
-      <h1><p style="left: 40px">nadla777 - TDP001</p></h1>
+      <h1>nadla777 - TDP001</h1>
     </header>
 
       <nav>
@@ -23,102 +23,30 @@
      
       <h3><a id="upg1">Uppgift 1</a></h3>
       <div class="upg_text">
-        Först jag gick på sidan <b>gitlab.liu.se</b> och skapade projekt med namn TDP001. Sedan jag opnade katalogen "websidan" med
-        <b>cd TDP001/websidan</b> och körde följande komando:
-        <list>
-
-          <li>git init - kommando för att initialisera .git</li>
-          <li>git remote add origin https://gitlab.liu.se/nadla777/tdp001.git - för att kopla min map till skapad projekt på gitlab</li>
-          <li>git add . - för att läga alla filer i git buffert</li>
-          <li>git commit -m "init" - kommentera alla filler</li>
-          <li>git push origin master - för att pusha allt från buffert till projekt på gitlab</li>
-        </list>
-
-        Till slut gick jag till gitlab - members - invite new members och lägt till simah964 & danhu849. 
+        Först jag gick på sidan <b>gitlab.liu.se</b> och skapade projekt med namn TDP001. Sedan jag gick till hemliga katalog .ssh för att hitta fil id_rsa.pub men 
+        jag hittade inte den. För att kunna hämta och spara filler via gitlab. Först jag måste skapa och lägga till ssh nyckel till min gitlab konto. Detta jag gör 
+        med hjälp av ssh-keygen. Först opnade jag terminalen (cntr+alt+t) sedan genom att använda kommando "ssh-keygen -t rsa -C "GitLab" -b 4096" skapas både privata och
+        publika delen av ssh nyckel. Det jag letar efter är ju publika delen som ligger i text dokument id_rsa.pub. Genom att kopiera den och lägga i gitlab konto via
+        "edit profile -> ssh keys" koplas ssh och gitlab. Sedan jag opnade katalogen "websidan" som har file path "~/home/TDP001/websidan" med
+        <b>cd TDP001 och sedan cd websidan</b> däreter körde jag följande kommando: <br><br>
+        
+        För att börja jobba med git måste man först initialisera .git dvs omvandla vanligt map till git repository. Detta görs enkelt via <b>git init</b>kommando. 
+        Nu har vi git repository i fil <b>~/home/TDP001/websidan</b>. För att kunna lägga upp och hämta ner filler först man måste kopla github projekt som jag skapade 
+        i början till initialiserad git repository i fil websidan. Detta görs genom <b>git remote add origin https://gitlab.liu.se/nadla777/tdp001.git</b> kommando.
+        Nu när jag har koplat ihop allt som behövdes. Jag kan lägga filler som jag har skapat innan. Först man måste lägga alla eller väljade filler i buffert.
+        Jag görde detta med kommando <b>git add .</b> för att lägga alla filler samtidigt annars man kan använda <b>git add FILNAMN</b> för specifik dokument. Sedan för att kunna 
+        lägga upp nya dokumenter till git projekt man måste ange så kallad "commit". Det hjälper till att ha koll om vad man har gjort samt git använder detta som olika versioner av kod.
+        För att sedan kunna hantera fel, ändra eller kolla upp vad man har gjort tidigare. Första commit brukar vara "init" för att visa att man har initialiserad sin git projekt. 
+        Man kan köra <b>git commit</b> då opnas text editor där man kan skriva medelanden. Jag körde <b>git commit -m "text"</b> med -m flaggan för att skriva medelanden direkt i terminalen. 
+        Sista sak som man ska göra är att "pusha". Men projekt kan ha olika "branches" dvs olika versioner av samma projekt för att kunna samtidigt jobba med alla de olika versioner. 
+        Vissa använder kommando <b>git branch -m main</b> för att byta branch namn till main. Men jag körde direkt <b>git push origin master</b>. Master eftersom alla github projekter har master branch.
+        Till slut gick jag till github - members - invite new members och lägt till simah964 & danhu849. 
         <a href="https://gitlab.liu.se/nadla777/tdp001">Länk till projekt</a>
       </div>
 
       <h3><a id="upg2">Uppgift 2</a></h3>
         <div class="upg_text">
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null    
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null    
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null 
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null    
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null 
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null    
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null 
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null    
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null 
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null    
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null  
-          null  null  null  null  null  null  null  null null  null  null  null  null  null  null  null 
-
+          null
         </div>
 
         <h3><a id="upg3">Uppgift 3</a></h3>
