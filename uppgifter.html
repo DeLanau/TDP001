@@ -21,7 +21,7 @@
 
     <main>
      
-      <h3><a id="upg1">Uppgift 1</a></h3>
+      <h3><a id="upg1">Uppgift 1 - Git, versionhantering och säkerhetskopiering</a></h3>
       <div class="upg_text">
         Först jag gick på sidan <b>gitlab.liu.se</b> och skapade projekt med namn TDP001. Sedan jag gick till hemliga katalog .ssh för att hitta fil id_rsa.pub men 
         jag hittade inte den. För att kunna hämta och spara filler via gitlab. Först jag måste skapa och lägga till ssh nyckel till min gitlab konto. Detta jag gör 
@@ -29,7 +29,7 @@
         publika delen av ssh nyckel. Det jag letar efter är ju publika delen som ligger i text dokument id_rsa.pub. Genom att kopiera den och lägga i gitlab konto via
         "edit profile -> ssh keys" koplas ssh och gitlab. Sedan jag opnade katalogen "websidan" som har file path "~/home/TDP001/websidan" med
         <b>cd TDP001 och sedan cd websidan</b> däreter körde jag följande kommando: <br><br>
-        
+
         För att börja jobba med git måste man först initialisera .git dvs omvandla vanligt map till git repository. Detta görs enkelt via <b>git init</b>kommando. 
         Nu har vi git repository i fil <b>~/home/TDP001/websidan</b>. För att kunna lägga upp och hämta ner filler först man måste kopla github projekt som jag skapade 
         i början till initialiserad git repository i fil websidan. Detta görs genom <b>git remote add origin https://gitlab.liu.se/nadla777/tdp001.git</b> kommando.
@@ -44,12 +44,27 @@
         <a href="https://gitlab.liu.se/nadla777/tdp001">Länk till projekt</a>
       </div>
 
-      <h3><a id="upg2">Uppgift 2</a></h3>
+      <h3><a id="upg2">Uppgift 2 - Enkel filhantering</a></h3>
         <div class="upg_text">
-          null
+          1. Först eftersom jag har varit låt och inte läst texten som står innan uppgift, då användade jag kommando <b>grep --help</b> flaggan "--help" skriver ut alla möjliga
+          flaggor och användningar av "grep". Seden efter ett tag så hitade jag flaggan <b>-e</b> som läter efter så kallade pattern. I min fall det är "on". Slutligen jag körde följande 
+          i terminalen <b>grep -e 'on'</b> för att hitta alla rader som slutar med "on"<br><br>
+
+          2. Jag vet nu att jag kan använda -e för att grippa in "son", sedan hittade jag i "--help" flagan -v som inverterar andra flaggor. Nu med kommando <b>grep -v -e 'son'</b>
+          jag kunde hitta alla efternamn som inte slutar på son. För att begrensa antalet efternamn jag måste skicka alla efternamn till pipe programmet. <b>| head -n5</b> den för data från tidigare program och begrensar utskriften till de första 5 efternamn. 
+          Då hela kommando skulle se ut på följande sett <b>grep -v -e 'son' | head -n5</b>. Men jag glömde ange file parameter och detta har skapat lite kaos. Slutligen kommando ser ut så har 
+          <b>grep -v -e 'son' resultat.txt | head -n5</b><br><br>
+
+          3. Först körde jag kommando <b>ls /usr/lib/</b> för att se alla förutom döljda filler i map. Sedan jag lägger till kommando <b>| grep -e '\.so\.</b> för att få bara de filler som innehåller ".so.". 
+          Då sista steget är klippa bort interessanta dellen xxx och spara det i fil. De gör jag genom att lägga til kommando <b>| cut -d'.' -f1 > files.txt</b>. Nu är hella kommando klart och ser ut på följande sett <b>ls /usr/lib/ | grep -e '\.so\.' | cut -d'.' -f1 > files.txt</b><br><br>
+
+          4. Först jag användade kommando <b>grep -i an resultat.txt</b> där flaggan "-i" gör så att det spelar ingen roll hur an stavas och i slut ligger filen vi vill kolla. Sedan för att skriva ut antalet använder jag pipe <b>| wc -l</b> där "wc" raknar ord och flaggan "-l" skriver ut antal rader.<br><br>
+
+          5. Först jag laddade ner fillen. Sedan opnade den med <b>emacs exemple.tex &</b> och ändrade sidhuvud och sidfot. Slutningen kompilerade jag fil med kommando <b>latexmk -xelatex -pvc exempel.tex</b>
+          <br><a href="exempel.pdf" target="_blank">Länk till latex</a>
         </div>
 
-        <h3><a id="upg3">Uppgift 3</a></h3>
+        <h3><a id="upg3">Uppgift 3 - Reguljära uttryck</a></h3>
         <div class="upg_text">
           null
         </div>
