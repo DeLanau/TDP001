@@ -48,17 +48,39 @@
         <div class="upg_text">
           1. Först eftersom jag har varit låt och inte läst texten som står innan uppgift, då användade jag kommando <b>grep --help</b> flaggan "--help" skriver ut alla möjliga
           flaggor och användningar av "grep". Seden efter ett tag så hitade jag flaggan <b>-e</b> som läter efter så kallade pattern. I min fall det är "on". Slutligen jag körde följande 
-          i terminalen <b>grep -e 'on'</b> för att hitta alla rader som slutar med "on"<br><br>
+          i terminalen <b>grep -e 'on' resultat.txt</b> för att hitta alla rader som slutar med "on". <br><br>Resultat: 
+          <br>Mikaela Andersson       14   0  17
+          <br>Gustaf Karlsson         12  14  13
+          <br>Marcus Carlsson         12   9  12
+          <br>Josefine Carlson        18  14  16
+          <br>Mats Karlzon            15  17  10
+          <br>Yngve Johanson          10  11   8
+          <br>Lennart Andersson        9  10  13
+          
+          <br><br>
 
           2. Jag vet nu att jag kan använda -e för att grippa in "son", sedan hittade jag i "--help" flagan -v som inverterar andra flaggor. Nu med kommando <b>grep -v -e 'son'</b>
           jag kunde hitta alla efternamn som inte slutar på son. För att begrensa antalet efternamn jag måste skicka alla efternamn till pipe programmet. <b>| head -n5</b> den för data från tidigare program och begrensar utskriften till de första 5 efternamn. 
           Då hela kommando skulle se ut på följande sett <b>grep -v -e 'son' | head -n5</b>. Men jag glömde ange file parameter och detta har skapat lite kaos. Slutligen kommando ser ut så har 
-          <b>grep -v -e 'son' resultat.txt | head -n5</b><br><br>
+          <b>grep -v -e 'son' resultat.txt | head -n5</b><br><br>Resultat: 
+
+          <br>David Fors               8  12  11
+          <br>Oskar Holmqvist          9  12  10
+          <br>Annica Rundgren         17  10  15
+          <br>Magnus Ahlsten          13  18  14
+          <br>Jerker Leo               0   0  11
+          
+          <br><br>
 
           3. Först körde jag kommando <b>ls /usr/lib/</b> för att se alla förutom döljda filler i map. Sedan jag lägger till kommando <b>| grep -e '\.so\.</b> för att få bara de filler som innehåller ".so.". 
           Då sista steget är klippa bort interessanta dellen xxx och spara det i fil. De gör jag genom att lägga til kommando <b>| cut -d'.' -f1 > files.txt</b>. Nu är hella kommando klart och ser ut på följande sett <b>ls /usr/lib/ | grep -e '\.so\.' | cut -d'.' -f1 > files.txt</b><br><br>
+          
+          Resultat: <a href="files.txt" target="_blank">Länk till resultat filen</a><br><br>
 
-          4. Först jag användade kommando <b>grep -i an resultat.txt</b> där flaggan "-i" gör så att det spelar ingen roll hur an stavas och i slut ligger filen vi vill kolla. Sedan för att skriva ut antalet använder jag pipe <b>| wc -l</b> där "wc" raknar ord och flaggan "-l" skriver ut antal rader.<br><br>
+          4. Först jag användade kommando <b>grep -c an resultat.txt</b> där flaggan "-c" står för --count och den ralnar antal matchade rader. 
+          <br><br>Resultat: 4
+
+          <br><br>
 
           5. Först jag laddade ner fillen. Sedan opnade den med <b>emacs exemple.tex &</b> och ändrade sidhuvud och sidfot. Slutningen kompilerade jag fil med kommando <b>latexmk -xelatex -pvc exempel.tex</b>
           <br><a href="exempel.pdf" target="_blank">Länk till latex</a>
