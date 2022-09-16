@@ -17,6 +17,8 @@
         <a href="#upg1">1</a>
         <a href="#upg2">2</a>
         <a href="#upg3">3</a>
+        <a href="#upg4">4</a>
+        <a href="#upg5">Slutövning terminalkommandon</a>
       </nav>
 
     <main>
@@ -61,7 +63,7 @@
 
           2. Jag vet nu att jag kan använda -e för att grippa in "son", sedan hittade jag i "--help" flagan -v som inverterar andra flaggor. Nu med kommando <b>grep -v -e 'son'</b>
           jag kunde hitta alla efternamn som inte slutar på son. För att begrensa antalet efternamn jag måste skicka alla efternamn till pipe programmet. <b>| head -n5</b> den för data från tidigare program och begrensar utskriften till de första 5 efternamn. 
-          Då hela kommando skulle se ut på följande sett <b>grep -v -e 'son' | head -n5</b>. Men jag glömde ange file parameter och detta har skapat lite kaos. Slutligen kommando ser ut så har 
+          Då hela kommando skulle se ut på följande sätt <b>grep -v -e 'son' | head -n5</b>. Men jag glömde ange file parameter och detta har skapat lite kaos. Slutligen kommando ser ut så har 
           <b>grep -v -e 'son' resultat.txt | head -n5</b><br><br>Resultat: 
 
           <br>David Fors               8  12  11
@@ -73,7 +75,7 @@
           <br><br>
 
           3. Först körde jag kommando <b>ls /usr/lib/</b> för att se alla förutom döljda filler i map. Sedan jag lägger till kommando <b>| grep -e '\.so\.</b> för att få bara de filler som innehåller ".so.". 
-          Då sista steget är klippa bort interessanta dellen xxx och spara det i fil. De gör jag genom att lägga til kommando <b>| cut -d'.' -f1 > files.txt</b>. Nu är hella kommando klart och ser ut på följande sett <b>ls /usr/lib/ | grep -e '\.so\.' | cut -d'.' -f1 > files.txt</b><br><br>
+          Då sista steget är klippa bort interessanta dellen xxx och spara det i fil. De gör jag genom att lägga til kommando <b>| cut -d'.' -f1 > files.txt</b>. Nu är hella kommando klart och ser ut på följande sätt <b>ls /usr/lib/ | grep -e '\.so\.' | cut -d'.' -f1 > files.txt</b><br><br>
           
           Resultat: <a href="files.txt" target="_blank">Länk till resultat filen</a><br><br>
 
@@ -88,7 +90,47 @@
 
         <h3><a id="upg3">Uppgift 3 - Reguljära uttryck</a></h3>
         <div class="upg_text">
-          null
+          1. Först jag började med 4-5 bokstaver i intervalet a-z <b>[a-z]{4,5}</b> och sedan med 2-3 siffror i intervalet [0-9] <b>[0-9]{2,3}</b> och i slutet läggr till <b>$</b> för att indikera slut på rad. 
+          <br><br>Regex: [a-z]{4,5}[0-9]{2,3}$
+
+          <br><br>
+
+          2. För att fånga datumet på följand formatet YYYY-MM-DD. Först jag började med att fånga 4 siffror i året <b>[0-9]{4}</b> eller <b>\d{1,4}</b> sedan 2 siffor i månaden <b>[0-1][0-9]</b> och slutligen dag <b>[0-3][0-9]$</b>
+          <br><br>Regex: \d{1,4}-[0-1][0-9]-[0-3][0-9]$
+
+          <br><br>
+
+          3. För att utöka regex så att den kan kontrollera datumets giltighet jag ska andra på månan och dag regex. År regex kommer fortfarande ser ut <b>(\d{1,4})</b>. 
+          Om första siffran i månad är 0 andra siffran kan inte vara större än 9 daremot om första siffran är 1 andra kan inte vara större än 2. Regex för utökat kontroll av månad kan se ut på följande sätt <b>(0[1-9]|1[0-2])</b>
+          Dagens regex kommer se ut nästan likadånt. Dagen kan inte vara mindre än 01 och större än 31. Regex kommer se ut på följande sätt <b>(0[1-9]|1[0-9]|2[0-9]|3[0-1])</b>. 
+
+          <br><br>Regex: (\d{1,4})-(0[1-9]|1[0-2])-(0[1-9]|1[0-9]|2[0-9]|3[0-1])$
+          
+          <br><br>
+
+          4. <a href="regex.py" target="_blank">Python kod</a><br><br>
+          
+          5. HTTP Request - är meddelanden som en klient skickar till en server för att utlösa någon åtgärd. uppgift för återuppbyggnad till frontresursen. HTTP-huvudet är huvudförfrågan.
+
+          <br><br>
+
+          6. Skillnaden mellan GET och POST är hur informationen skickas till servern. När det är GET så skickas informationen via urlen och querysträngen. När det är POST så skickas informationen via http protokollets body och är inte synligt i länken.
+            För att hämta data från servern till användadre man ska använda GET. För att lägga till eller ändra data på server användaren ska använda POST. 
+
+        </div>
+
+        <h3><a id="upg4">Uppgift 4 - null</a></h3>
+        <div class="upg_text">
+
+          null 
+
+        </div>
+
+        <h3><a id="upg5">Slutövning terminalkommandon</a></h3>
+        <div class="upg_text">
+
+          null 
+
         </div>
 
     </main>
