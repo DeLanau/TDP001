@@ -108,7 +108,12 @@
           
           <br><br>
 
-          4. <a href="regex.py" target="_blank">Python kod</a><br><br>
+          4. Tänken bakom regex: först alla element i html står inne i <>. I de flästa fall det är hela ordet sasom html, div, h3 osv. Men det också finns 
+          "a href" med massa andra saker inne. I första fall jag börjar med <b><[^/!]</b> för att matcha single char förutom ! (annars vi för !DOCTYPE html med). 
+          Men <b><[^/!]</b> kommer hämta bara en char i taget, för att fixa detta jag lägger till <b>\S</b> för att matcha alla tecken förutom mellanslag och <b>*</b> som upreppar förra regex från 0 till unlimited.
+          <br><br>Slutligen regex kommer se ut på följande sätt: <b><[^/!]\S*></b> eller <b><[^/!]\S*</b> dvs <b>(<[^/!]\S*>|<[^/!]\S*)</b>
+
+          <br><a href="regex.py" target="_blank">Python kod filen</a><br><a href="https://gitlab.liu.se/nadla777/tdp001/-/blob/master/regex.py" target="_blank">Python kod länk till gitlab</a><br><br>
           
           5. HTTP Request - är meddelanden som en klient skickar till en server för att utlösa någon åtgärd. uppgift för återuppbyggnad till frontresursen. HTTP-huvudet är huvudförfrågan.
 
