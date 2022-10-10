@@ -124,17 +124,84 @@
 
         </div>
 
-        <h3><a id="upg4">Uppgift 4 - null</a></h3>
+        <h3><a id="upg4">Uppgift 4 - Find</a></h3>
         <div class="upg_text">
 
-          null 
+          1. För att hitta alla filler i hemkatalog som matchar [namn].py så kör jag <b>find ~ -name "*.py"</b>om jag redan står i hemkatalog så kan man byta '~' till '.'.
+          För att kontrollera att fillen är körbart så lägger jag till flaggan <b>-executable</b> sedan för att kontrollera att fillen har i sig <b>#! /usr/bin/env python3</b>. 
+          Jag lägger till <b>-exec grep "#\!" -q {} + -print</b> där -exec anropar grep "#\!" med flaggan -q (för att ta bort skarappet i utskrift) {} är själva filnamn och till slut med + -print skrivs ut all filler.
+
+          <br><br>Kommando: find ~ -name "*.py" -executable -exec grep "#\!" {} -q + -print <br>
+
+          2. För att hitta alla filler som är storre än 5Mb jag lägger till kommando <b>-size +5M</b> och flaggan <b>-type f</b> för att lista ut bara filler. <br><br>
+
+          Kommando: find ~ -size +5M -type f <br>
+
+          3. Först jag tryckte på <b>F3</b> för att starta inspelning av macros sedan <b>Alt+X</b> som motsvarar Meta-key. Det gör att istället för att leta efter key kombination. Jag kan bara skriva in <b>replace-regex</b> sedan jag anger regex och det som ska replaca regexen. 
+          För att tabort alla siffror <b>[0-9]</b>. Slutligen jag använder <b>F4</b> för att spara macros. 
 
         </div>
 
-        <h3><a id="upg5">Slutövning terminalkommandon</a></h3>
+        <h3><a id="upg5">Slutövning terminalkommandon </a></h3>
         <div class="upg_text">
 
-          null 
+          1. Kataloger och filer <br><br>
+            *Skapar folder TDP004/lab1 med <b>mkdir -p TDP004/lab1</b>, flaggan -p gör möjligt att skapa directory och parent directory med en mkdir. <br> 
+            *Går till TDP004 med <b>cd TDP004</b>, skapar och redigerar README.md med <b>emacs README.md &</b>. Efter redigering kör <b>C-x och C-s</b> för att spara filen. <br>
+            *Skapar repository på gitlab.liu.se. <br>
+            *Initierar repo i folder med <b>git init</b> och sedan kopplar till repository på gitlab.liu.se med <b>git remote add origin git@gitlab.liu.se:nadla777/slutovng.git</b>. <br>
+            *Lägger alla filar till git buffert med <b>git add .</b>, skapar commit med <b>git -m commit "init repo"</b> och slutligen knuffar allt med <b>git push origin master</b>.
+
+            <br><br>
+
+          2. Jobba via ssh <br><br>
+            *Ansluter till ssh med kommando <b>ssh nadla777@ssh.edu.liu.se</b><br>
+            *Skapar folder TDP004 med <b>mkdir TDP004</b><br>
+            *Initierar repo i folder med <b>git init</b> och sedan kopplar till repository på gitlab.liu.se med <b>git remote add origin git@gitlab.liu.se:nadla777/slutovng.git</b>. <br>
+            *Kör <b>git pull</b> för att dra ner alla filer etc. <br> 
+            *Skapar katalog TDP004/lab2 med <b>mkdir -p TDP004/lab2</b>. <br>
+            *Skapar filen lab1.cc i katalogen lab1 med <b>touch ~/TDP004/TDP004/lab1/lab1.cc</b> pga filen jag ska skapa är tom så använder jag touch. <br>
+            *Samma kommando <b>touch ~/TDP004/TDP004/lab1/lab2.cc</b> och <b>touch ~/TDP004/TDP004/lab1/lab2.h</b>. <br>
+            *Flyter lab2.cc och lab2.h med <b>mv -t ~/TDP004/TDP004/lab2 lab2.cc lab2.h</b> mv kommando flyter saker och -t flaggan används för att flyta flera saker med 1 kommando. <br> 
+            *Ändrar README.md med <b>nano ~/TDP004/TDP004/README.md</b>. <br>
+            *Skapar junk.temp med <b>touch ~/TDP004/TDP004/junk.temp</b>. <br>
+            *Skapar .gitignore med <b>touch ~/TDP004/TDP004/.gitignore</b> och sedan lägger till <b>*.temp</b> och <b>*~</b> för att ignorera alla filer som slutar med .temp och *~. <br>
+            *Lägger alla filer till git buffert med <b>git add .</b>, skapar commit med <b>git -m commit "lab2"</b> och slutligen knuffar allt med <b>git push origin master</b>.
+
+            <br><br>
+
+          3. Lösa en konflikt<br><br>
+            *Efter att jag har skapat git konflikt genom att köra <b>git pull</b>, jag öppnade README.md med <b>emacs README.md &</b> och såg olika pill som pekar på konflikten i fil. 
+            Efter att jag har tagit bort fel, jag kunde knuffa allt med <b>git push origin master</b>
+
+            <br><br>
+
+          4. Rättigheter och skriva till fil <br><br>
+            *Först jag navigerade till TDP004 med <b>cd</b> sedan jag körde <b>emacs test.py &</b> och fixade simple kod. För att göra den körbart jag chmodade fillen med <b>chmod u+x test.py</b> chmod ändrar rättigheter så att u+x kan köra filen. u står för user och x för execute permission. <br>
+            *För att lägga till och inte skriva om filen, jag använder <b>echo "Detta är en kommentar som skapats med echo" >> test.py</b>. En > skriver om hela filen medan två >> lägger till kommentar i fil.<br>
+            *För att kopiera hela filen jag körde <b>cp -R lab2 lab3</b> i TDP004 mappen. -R flaggan står för rekursiv dvs kopiera fil rekursiv med alla underfil/dokument.<br>
+            *För att bytta namn på alla filer jag använder <b>mv lab2.cc lab3.cc</b> och <b>mv lab2.h lab3.h</b> tidigare mv kommando har används för att flyta saker men den kommando kan också bytta namn på saker.<br>
+            *För att hämta fil jag använder <b>scp -r lab1 nadla777@ssh.edu.liu.se:/TDP004/TDP004/lab1</b>scp kopierar fil från min dator till ssh och flaggan -r samma som -R dvs rekursiv kopiering.<br>
+            *Först jag byter namn på katalogen med  <b>mv lab1 lab4</b> och sedan med <b>mv lab1.cc lab4.cc och mv lab1.h lab4.h</b> byter namn på filer. <br> 
+
+            <br><br>
+
+          5. Dokumentera katalogen <br><br>
+            *För att dokumentera katalogstrukturen jag använder <b>tree</b> kommando, som skriver ut strukturen. Men för att skriva den direkt till README.md jag lägger till >> README.md, så att kommando ser ut på följande sätt <b>tree >> README.md</b>. <br>
+            
+            <br><br>
+
+          6. Smått och gott <br><br>
+            *För att hitta alla körbara filer i hem katalog jag kör <b>find ~ -executable</b> <br>
+            *Filtrerar dessa genom att lägga till <b>-name "*.py"</b> så att jag för körbar py filer. Kommando: find ~ -name "*.py" -executable<br>
+            *För att skriva ut alla kommentar rader jag utökar kommando med <b>-exec grep -e "^#" {} + -print</b>. Meta escape - ^ kollar om rad börjar med #, kommando ser på följande sätt <b>find ~ -name "*.py" -executable -exec grep -e "^#" {} + -print</b><br>
+
+            <br><br>
+
+          7. Lite Bashprogrammering <br><br>
+            *<a href="bash.sh" target="_blank">Bash fil</a> <br>
+            *Tanken bakom koden: Först hämtar in 2 tal. Seden kör loop i intervall av int1 och int2, skapar ret som anropar kommando "factor" som i sin tur printar "prime factor". Lite cut formatering för att få bara siffror. Slutligen if sats kollar om "prime factor" ==
+            nummer från intervallet. För att skriva ut allt fint jag använder true flaggan. 
 
         </div>
 

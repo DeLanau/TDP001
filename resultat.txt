@@ -19,3 +19,4 @@ Ingrid Lindgren          8  13  13
 Kjell Djurstedt         12  12  12
 Lennart Andersson        9  10  13
 Elisabeth Björklind     15  12  10
+                        1234567890

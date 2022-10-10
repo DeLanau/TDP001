@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import urllib.request
 import re
 
@@ -8,7 +11,7 @@ with urllib.request.urlopen('https://php-web.edu.liu.se/nadla777/TDP001/') as re
 
 
 #hitta alla tags som passar regex 
-#Regex [^/!] börja från första tecken tills slut  \S* för att hämta allt inne i <> eller fran < till slut av första tag.
+#Regex [^/!] börja från första tecken tills slut  #\S* för att hämta allt inne i 3438<> eller fran < till slut av första tag.
 
 match = re.findall("(<[^/!]\S*>|<[^/!]\S*)", html)
 
@@ -25,4 +28,4 @@ for tag in match:
     print(str(tag_count) + " " + tag)
     if tag_count > 1:
         for i in range(0, tag_count):
-            match.remove(tag)
+            match.remove(tag) #
